@@ -1,0 +1,82 @@
+### Domains, a place to put your reusable components
+
+### Examples...
+
+info:
+  description: "This is a sample Domain"
+  version: '1.0'
+  title: Sample Domain
+
+definitions:
+  User:
+    type: object
+    properties:
+      status:
+        type: integer
+        description: Status code
+        example: 200
+      UUID:
+        type: string
+        description: ID from DB
+        format: uuid
+        example: 'cce221e9-5d2f-4adb-9ad0-955677757d1e'
+      first_name: 
+        type: string
+        description: Users first name
+        example: 'James'
+      last_name:
+        type: string
+        description: Users last name
+        example: 'Stevens'
+      email:
+        type: string
+        description: Users email
+        example: 'j_stevens@sb.com'
+      join_date:
+        type: string
+        description: Unix timestamp of user posted to DB
+        example: '1511884800'  
+  404Response:
+    type: object
+    properties:
+      status:
+        type: integer
+        description: Status code
+        example: 404
+      message:
+        type: string
+        description: Error message
+        example: 'Bad Request'
+  500Response:
+    type: object
+    properties:
+      status:
+        type: integer
+        description: Status code
+        example: 500
+      message:
+        type: string
+        description: Error message
+        example: 'Internal Server Error'    
+
+# responses:
+  # GeneralError:
+  #   description: General Error
+  #   schema:
+  #     $ref: '#/definitions/ErrorModel'
+
+# parameters:
+  # skipParam:
+  #   name: "skip"
+  #   in: "query"
+  #   description: "number of items to skip"
+  #   type: "integer"
+
+# pathitems:
+  # EntityOperations:
+  #   get:
+  #     description: "Returns a pet based on ID"
+  #     summary: "Find pet by ID"
+  #     responses:
+  #       default:
+  #         $ref: '#/responses/GeneralError'
